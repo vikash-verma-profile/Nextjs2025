@@ -3,14 +3,6 @@ export default function About() {
     <div className="container mt-5">
       <h1 className="text-success"> About Us</h1>
       <p>This page tells us more about us</p>
-      <nav>
-        <a className="btn btn-outline-primary me-2" href="/">
-          Home
-        </a>
-        <a className="btn btn-outline-info" href="/contact">
-          Contact
-        </a>
-      </nav>
     </div>
   );
 }
