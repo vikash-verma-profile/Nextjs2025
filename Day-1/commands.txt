@@ -1,0 +1,2 @@
+npx create-next-app lab1
+npm install bootstrap@5.3.2
