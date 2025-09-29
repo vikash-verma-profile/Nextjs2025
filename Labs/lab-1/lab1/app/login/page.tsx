@@ -1,11 +1,13 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState<string>("");
+  const router=useRouter();
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -20,6 +22,7 @@ export default function Login() {
     if (data.token) {
       localStorage.setItem("token", data.token);
     }
+    router.push("/dashboard");
   }
   return (
     <div className="container mt-5">
