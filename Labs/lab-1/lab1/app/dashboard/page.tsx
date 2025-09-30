@@ -42,11 +42,11 @@ export default function DashboardPage() {
         <div className="container mt-5">
             <h2 className="text-center mb-4">Dashboard</h2>
             <p>Welcome, {email}!</p>
-            <button className="btn btn-success" onClick={() => {
+            {/* <button className="btn btn-success" onClick={() => {
                 localStorage.removeItem("token");
 
                 window.location.href = "/login";
-            }}>Logout</button>
+            }}>Logout</button> */}
 
         </div>
     );

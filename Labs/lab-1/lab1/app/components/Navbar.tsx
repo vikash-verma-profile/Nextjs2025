@@ -1,6 +1,10 @@
+"use client";
+
+import { useAuth } from "@/hooks/useAuth";
 import Link from "next/link";
 
 export default function Navbar() {
+  const { isAuthenticated, logout } = useAuth();
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
       <div className="container">
@@ -35,16 +39,31 @@ export default function Navbar() {
                 Contact
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/login">
-                Login
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/register">
-                Register
-              </Link>
-            </li>
+            {!isAuthenticated ? (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" href="/login">
+                    Login
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" href="/register">
+                    Register
+                  </Link>
+                </li></>) : (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" href="/dashboard">
+                    Dashboard
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <button className="nav-link" onClick={logout}>
+                    Logout
+                  </button>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
